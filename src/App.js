@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
 import Entries from './components/Entries';
-import firebase from './firebase';
 import './App.css';
 
 
@@ -10,8 +9,8 @@ class App extends Component {
     super(props);
     this.state = { 
       buttonClicked: false,
-      stateOfPublished: '',
-      stateOfJournalEntries: '',
+      isItPublished: '',
+      journalEntriesData: [],
     }
   }
 
@@ -23,14 +22,22 @@ class App extends Component {
   }
 
   //function to get value of published from Forms component
-  // getValue = (dataFromForm) => {
-  //   this.setState({
-  //     stateOfPublished: passStateForPublished,
-  //   //   stateOfJournalEntries: passStateForJournalEntries,
-  //   }, () => {
-  //     console.log(this.state.dataFromForm);
-  //   })
-  // }
+  getValue = (e, childData) => {
+    e.preventDefault();
+    console.log(childData);
+    this.setState({
+      isItPublished: childData,
+    //   stateOfJournalEntries: passStateForJournalEntries,
+    })
+  }
+
+  getJournalData = (e, journalData) => {
+    e.preventDefault();
+    this.setState({
+      journalEntriesData: journalData,
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -39,9 +46,16 @@ class App extends Component {
         <h3>Start documenting your travels today</h3>
         <button onClick={this.showForm}>Create A Journal</button>
 
-        <Form wasButtonClicked={this.state.buttonClicked}/>
+        <Form 
+          wasButtonClicked={this.state.buttonClicked}
+          parentCallback={this.getValue}
+          parentTwoCallback={this.getJournalData}
+        />
 
-        <Entries wasEntrySubmitted={this.getValue}/>
+        <Entries 
+        wasEntrySubmitted={this.state.isItPublished}
+        journalData={this.state.journalEntriesData}
+        />
     
 
         {/* <div>

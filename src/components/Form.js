@@ -94,12 +94,24 @@ class Form extends Component {
     }, () => {
       console.log(this.state.published);
     })
-  }
 
-  someFn = () => {
-    const passStateForPublished = this.state.published; 
+    this.sendData(e, this.state.published);
+
+    this.sendJournalData(e, this.state.journalEntries);
+
+  }
+  
+  sendData = (e) => {
+    console.log(this.state.published)
+    this.props.parentCallback(e, this.state.published);
+  
+    
     // const passStateForJournalEntries = this.state.journalEntries;
     // this.props.wasEntrySubmitted('test');
+  }
+
+  sendJournalData = (e) => {
+    this.props.parentTwoCallback(e, this.state.journalEntries);
   }
 
   render() {
@@ -121,7 +133,7 @@ class Form extends Component {
                 <input type="file" id="photo" accept="image/png, image/jpeg" onChange={this.handlePhotoChange} value={this.state.userInputPhoto} />
                 <button type="submit">Publish Entry</button>
               </form>
-              : null
+            : null
           }
       </section>
     );
