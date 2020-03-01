@@ -6,38 +6,13 @@ class Form extends Component {
     super();
 
     this.state = {
-      journalEntries: [],
 
       userInputDate: '',
       userInputTitle: '',
       userInputLocation: '',
       userInputText: '',
       userInputPhoto: '',
-
-      published: false,
     }
-  }
-
-  componentDidMount() {
-    const entries = firebase.database().ref('entries');
-
-    entries.on('value', (response) => {
-      const dataFromDb = response.val();
-
-      const stateToBeSet = [];
-
-      for (let key in dataFromDb) {
-        const entry = {
-          key: key,
-          name: dataFromDb[key],
-        }
-        stateToBeSet.push(entry);
-      }
-
-      this.setState({
-        journalEntries: stateToBeSet,
-      })
-    })
   }
 
   handleTitleChange = (e) => {
@@ -89,52 +64,27 @@ class Form extends Component {
       userInputLocation: '',
       userInputText: '',
       userInputPhoto: '',
-
-      published: true,
-    }, () => {
-      console.log(this.state.published);
     })
 
-    this.sendData(e, this.state.published);
-
-    this.sendJournalData(e, this.state.journalEntries);
-
-  }
-  
-  sendData = (e) => {
-    console.log(this.state.published)
-    this.props.parentCallback(e, this.state.published);
-  
-    
-    // const passStateForJournalEntries = this.state.journalEntries;
-    // this.props.wasEntrySubmitted('test');
-  }
-
-  sendJournalData = (e) => {
-    this.props.parentTwoCallback(e, this.state.journalEntries);
+    this.props.showList();
   }
 
   render() {
     return(
       <section>
-        {
-          this.props.wasButtonClicked 
-            ?
-              <form action="submit" onSubmit={this.handleFormSubmit}>
-                <label htmlFor="date">Date:</label>
-                <input type="date" id="date" onChange={this.handleDateChange} value={this.state.userInputDate} />
-                <label htmlFor="title">Title:</label>
-                <input type="text" id="title" onChange={this.handleTitleChange} value={this.state.userInputTitle} />
-                <label htmlFor="location">Location:</label>
-                <input type="text" id="location" onChange={this.handleLocationChange} value={this.state.userInputLocation} />
-                <label htmlFor="text">Text</label>
-                <input type="text" id="text" onChange={this.handleTextChange} value={this.state.userInputText} />
-                <label htmlFor="photo">Add Photo:</label>
-                <input type="file" id="photo" accept="image/png, image/jpeg" onChange={this.handlePhotoChange} value={this.state.userInputPhoto} />
-                <button type="submit">Publish Entry</button>
-              </form>
-            : null
-          }
+        <form action="submit" onSubmit={this.handleFormSubmit}>
+          <label htmlFor="date">Date:</label>
+          <input type="date" id="date" onChange={this.handleDateChange} value={this.state.userInputDate} />
+          <label htmlFor="title">Title:</label>
+          <input type="text" id="title" onChange={this.handleTitleChange} value={this.state.userInputTitle} />
+          <label htmlFor="location">Location:</label>
+          <input type="text" id="location" onChange={this.handleLocationChange} value={this.state.userInputLocation} />
+          <label htmlFor="text">Text</label>
+          <input type="text" id="text" onChange={this.handleTextChange} value={this.state.userInputText} />
+          <label htmlFor="photo">Add Photo:</label>
+          <input type="file" id="photo" accept="image/png, image/jpeg" onChange={this.handlePhotoChange} value={this.state.userInputPhoto} />
+          <button type="submit">Publish Entry</button>
+        </form>
       </section>
     );
   }

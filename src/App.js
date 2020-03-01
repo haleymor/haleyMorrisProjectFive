@@ -9,8 +9,7 @@ class App extends Component {
     super(props);
     this.state = { 
       buttonClicked: false,
-      isItPublished: '',
-      journalEntriesData: [],
+      showList: false
     }
   }
 
@@ -20,21 +19,10 @@ class App extends Component {
       buttonClicked: true,
     })
   }
-
-  //function to get value of published from Forms component
-  getValue = (e, childData) => {
-    e.preventDefault();
-    console.log(childData);
-    this.setState({
-      isItPublished: childData,
-    //   stateOfJournalEntries: passStateForJournalEntries,
-    })
-  }
-
-  getJournalData = (e, journalData) => {
-    e.preventDefault();
-    this.setState({
-      journalEntriesData: journalData,
+  
+  showList = () => {
+    this.setState({ 
+      showList: true 
     })
   }
 
@@ -46,18 +34,9 @@ class App extends Component {
         <h3>Start documenting your travels today</h3>
         <button onClick={this.showForm}>Create A Journal</button>
 
-        <Form 
-          wasButtonClicked={this.state.buttonClicked}
-          parentCallback={this.getValue}
-          parentTwoCallback={this.getJournalData}
-        />
-
-        <Entries 
-        wasEntrySubmitted={this.state.isItPublished}
-        journalData={this.state.journalEntriesData}
-        />
+        {this.state.buttonClicked && <Form showList={this.showList} />}
+        {this.state.showList && <Entries />}
     
-
         {/* <div>
           {this.state.journalEntries.map((entry) => {
             return (
