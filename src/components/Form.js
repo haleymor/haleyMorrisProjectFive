@@ -71,19 +71,32 @@ class Form extends Component {
 
   render() {
     return(
-      <section>
+      <section className="formSection">
+        <h1>New Entry...</h1>
         <form action="submit" onSubmit={this.handleFormSubmit}>
-          <label htmlFor="date">Date:</label>
-          <input type="date" id="date" onChange={this.handleDateChange} value={this.state.userInputDate} />
-          <label htmlFor="title">Title:</label>
-          <input type="text" id="title" onChange={this.handleTitleChange} value={this.state.userInputTitle} />
-          <label htmlFor="location">Location:</label>
-          <input type="text" id="location" onChange={this.handleLocationChange} value={this.state.userInputLocation} />
-          <label htmlFor="text">Text</label>
-          <input type="text" id="text" onChange={this.handleTextChange} value={this.state.userInputText} />
-          <label htmlFor="photo">Add Photo:</label>
-          <input type="file" id="photo" accept="image/png, image/jpeg" onChange={this.handlePhotoChange} value={this.state.userInputPhoto} />
-          <button type="submit">Publish Entry</button>
+          <div className="dateOfTrip input">
+            <label htmlFor="date">Date of Trip:</label>
+            <input type="date" id="date" onChange={this.handleDateChange} value={this.state.userInputDate} />
+          </div>
+          <div className="entryTitle input">
+            <label htmlFor="title">Entry Title:</label>
+            <input type="text" id="title" onChange={this.handleTitleChange} value={this.state.userInputTitle} />
+          </div>
+          <div className="locationOfTrip input">
+            <label htmlFor="location">Location of Trip:</label>
+            <input type="text" id="location" onChange={this.handleLocationChange} value={this.state.userInputLocation} />
+          </div>
+          <div className="entryText input">
+            <label htmlFor="text">Entry Text:</label>
+            <input type="text" id="text" onChange={this.handleTextChange} value={this.state.userInputText} />
+          </div>
+          <div className="addPhoto input">
+            <label htmlFor="photo">Add Photo:</label>
+            <input type="file" id="photo" accept="image/png, image/jpeg" onChange={this.handlePhotoChange} value={this.state.userInputPhoto} />
+          </div>
+          <div className="submitButton">
+            <button type="submit">Publish Entry</button>
+          </div>
         </form>
       </section>
     );

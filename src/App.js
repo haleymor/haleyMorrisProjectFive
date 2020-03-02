@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
 import Entries from './components/Entries';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import './App.css';
 
 
@@ -9,7 +11,8 @@ class App extends Component {
     super(props);
     this.state = { 
       buttonClicked: false,
-      showList: false
+      showList: false,
+      buttonVisible: true
     }
   }
 
@@ -17,6 +20,7 @@ class App extends Component {
     e.preventDefault();
     this.setState({
       buttonClicked: true,
+      buttonVisible: false,
     })
   }
   
@@ -29,13 +33,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Travel Journal Name</h1>
-        <h2>Explore, Discover, Adventure, Journal.</h2>
-        <h3>Start documenting your travels today</h3>
-        <button onClick={this.showForm}>Create A Journal</button>
-
-        {this.state.buttonClicked && <Form showList={this.showList} />}
-        {this.state.showList && <Entries />}
+        <Header />
+        <div className="landingPage">
+          {this.state.buttonVisible &&
+            <div>
+              <h1>Travel Journal</h1>
+              <h2>Explore, Discover, Adventure, Journal.</h2>
+              <h3>Start documenting your travels today</h3>
+              <button onClick={this.showForm}>Create A Journal</button>
+            </div>
+            }
+          {this.state.buttonClicked && <Form showList={this.showList} />}
+          {this.state.showList && <Entries />}
+        </div>
     
         {/* <div>
           {this.state.journalEntries.map((entry) => {
@@ -50,7 +60,9 @@ class App extends Component {
             );
           })}
         </div> */}
+        <Footer />
       </div>
+        
     );
   }
 }
