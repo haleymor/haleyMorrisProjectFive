@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Entries from './components/Entries';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Entry from './components/Entry';
 import './App.css';
 
 
@@ -12,7 +13,10 @@ class App extends Component {
     this.state = { 
       buttonClicked: false,
       showList: false,
-      buttonVisible: true
+      buttonVisible: true,
+      showEntry: false,
+      journalData: [],
+      singleEntry: '',
     }
   }
 
@@ -30,6 +34,16 @@ class App extends Component {
     })
   }
 
+  handleEntryClick = (entryId) => {
+    this.setState({
+      showList: false,
+      showEntry: true,
+      singleEntry: entryId,
+    }, () => {
+      console.log(this.state.showEntry);
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -44,25 +58,15 @@ class App extends Component {
             </div>
             }
           {this.state.buttonClicked && <Form showList={this.showList} />}
-          {this.state.showList && <Entries />}
+          
         </div>
-    
-        {/* <div>
-          {this.state.journalEntries.map((entry) => {
-            return (
-              <div>
-                <h5>{entry.name.title}</h5>
-                <p>{entry.name.date}</p>
-                <p>{entry.name.location}</p>
-                <p>{entry.name.text}</p>
-                <img src={entry.name.photo} alt=""/>
-              </div>
-            );
-          })}
-        </div> */}
+        { 
+          this.state.showList ? <Entries handleEntryClick={this.handleEntryClick} />
+          :
+          this.state.showEntry && <Entry entryId={this.state.singleEntry} />
+        }
         <Footer />
       </div>
-        
     );
   }
 }

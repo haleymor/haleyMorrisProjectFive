@@ -5,7 +5,7 @@ class Entries extends Component {
   constructor(){
     super();
     this.state = {
-      journalData: []
+      journalData: [],
     }
   }
 
@@ -31,15 +31,25 @@ class Entries extends Component {
     })
   }
 
+  handleClick = (e) => {
+    e.preventDefault();
+    console.log('im being clicked');
+    console.log(e.target.value);
+    this.props.handleEntryClick(e.target.value);
+  }
+
   render() {
     return(
-      <section>
+      <section className="myEntries">
+        <h1>My Entries</h1>
           <ul>
             {this.state.journalData.map((entry) => {
               return (
                 <li key={entry.key}>
-                  <h4>{entry.name.title}</h4>
-                  <p>{entry.name.date}</p>
+                  <button onClick={this.handleClick} value={entry.key}>
+                    <h4>{entry.name.date}</h4>
+                    <p>{entry.name.title}</p>
+                  </button>
                 </li>
               );
             })}
