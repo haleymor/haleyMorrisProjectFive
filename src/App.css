@@ -84,6 +84,7 @@ font-family: 'Oxygen', sans-serif; */
 .input input {
   padding: 10px;
   margin: 0 10px;
+  border: none;
 }
 
 .formSection h1 {
@@ -92,8 +93,10 @@ font-family: 'Oxygen', sans-serif; */
   color: #030027;
 }
 
-.formSection .entryText input {
-  padding: 100px 0;
+.formSection .entryText textarea {
+  resize: none;
+  margin: 0 10px;
+  border: none;
 }
 
 .appHeader {
@@ -168,6 +171,32 @@ font-family: 'Oxygen', sans-serif; */
 .myEntries h4, .myEntries p {
   position: relative;
   z-index: -1;
+}
+
+.singleEntry {
+  background: #FDFFFC;
+  border: 2px solid #030027;
+  margin: 30px 150px;
+}
+
+.singleEntry h5 {
+  font-family: 'Indie Flower';
+  font-size: 3rem;
+  margin: 0;
+  padding-top: 30px; 
+  text-transform: uppercase;
+  color: #030027;
+}
+
+.singleEntry h6 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.singleEntry p {
+  margin-top: 30px;
+  padding: 0 20px;
+  text-align: left;
 }
 
 .appFooter {

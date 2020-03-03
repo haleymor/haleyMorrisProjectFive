@@ -38,8 +38,6 @@ class Entry extends Component {
         stateToBeSet.push(data);
       }
 
-      console.log(stateToBeSet)
-
       this.setState({
         journalData: stateToBeSet,
       }, () => {
@@ -49,16 +47,15 @@ class Entry extends Component {
 
   }
 
-
   render() {
     return (
       <section className="singleEntry">
         {this.state.journalData.map((entry) => {
           return (
-            <div>
+            <div className="entryContainer">
               <h5>{entry.name.title}</h5>
-              <p>{entry.name.date}</p>
-              <p>{entry.name.location}</p>
+              <h6>{entry.name.date}</h6>
+              <h6>{entry.name.location}</h6>
               <p>{entry.name.text}</p>
               <img src={entry.name.photo} alt="" />
             </div>

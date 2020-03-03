@@ -39,8 +39,6 @@ class App extends Component {
       showList: false,
       showEntry: true,
       singleEntry: entryId,
-    }, () => {
-      console.log(this.state.showEntry);
     })
   }
 

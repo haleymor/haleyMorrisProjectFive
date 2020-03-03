@@ -33,8 +33,6 @@ class Entries extends Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    console.log('im being clicked');
-    console.log(e.target.value);
     this.props.handleEntryClick(e.target.value);
   }
 

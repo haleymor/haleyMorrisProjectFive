@@ -88,7 +88,9 @@ class Form extends Component {
           </div>
           <div className="entryText input">
             <label htmlFor="text">Entry Text:</label>
-            <input type="text" id="text" onChange={this.handleTextChange} value={this.state.userInputText} />
+            <textarea id="text" rows="20" cols="60" onChange={this.handleTextChange} value={this.state.userInputText}>
+            </textarea>
+            {/* <input type="text" id="text" onChange={this.handleTextChange} value={this.state.userInputText} /> */}
           </div>
           <div className="addPhoto input">
             <label htmlFor="photo">Add Photo:</label>
