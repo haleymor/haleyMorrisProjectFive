@@ -1,22 +1,26 @@
 {
   "files": {
-    "main.css": "/haleyMorrisProjectFive/static/css/main.d1b05096.chunk.css",
-    "main.js": "/haleyMorrisProjectFive/static/js/main.36c19ccd.chunk.js",
-    "main.js.map": "/haleyMorrisProjectFive/static/js/main.36c19ccd.chunk.js.map",
+    "main.css": "/haleyMorrisProjectFive/static/css/main.e6158a01.chunk.css",
+    "main.js": "/haleyMorrisProjectFive/static/js/main.41272200.chunk.js",
+    "main.js.map": "/haleyMorrisProjectFive/static/js/main.41272200.chunk.js.map",
     "runtime-main.js": "/haleyMorrisProjectFive/static/js/runtime-main.5c5f63aa.js",
     "runtime-main.js.map": "/haleyMorrisProjectFive/static/js/runtime-main.5c5f63aa.js.map",
-    "static/js/2.50921a4e.chunk.js": "/haleyMorrisProjectFive/static/js/2.50921a4e.chunk.js",
-    "static/js/2.50921a4e.chunk.js.map": "/haleyMorrisProjectFive/static/js/2.50921a4e.chunk.js.map",
+    "static/css/2.6ec8dc65.chunk.css": "/haleyMorrisProjectFive/static/css/2.6ec8dc65.chunk.css",
+    "static/js/2.c6dd2753.chunk.js": "/haleyMorrisProjectFive/static/js/2.c6dd2753.chunk.js",
+    "static/js/2.c6dd2753.chunk.js.map": "/haleyMorrisProjectFive/static/js/2.c6dd2753.chunk.js.map",
     "index.html": "/haleyMorrisProjectFive/index.html",
-    "precache-manifest.722b1ce624d2e7d23f1ab8446e437265.js": "/haleyMorrisProjectFive/precache-manifest.722b1ce624d2e7d23f1ab8446e437265.js",
+    "precache-manifest.98bcf06f2a5e03dc604a0ea344f0871b.js": "/haleyMorrisProjectFive/precache-manifest.98bcf06f2a5e03dc604a0ea344f0871b.js",
     "service-worker.js": "/haleyMorrisProjectFive/service-worker.js",
-    "static/css/main.d1b05096.chunk.css.map": "/haleyMorrisProjectFive/static/css/main.d1b05096.chunk.css.map",
-    "static/js/2.50921a4e.chunk.js.LICENSE.txt": "/haleyMorrisProjectFive/static/js/2.50921a4e.chunk.js.LICENSE.txt"
+    "static/css/2.6ec8dc65.chunk.css.map": "/haleyMorrisProjectFive/static/css/2.6ec8dc65.chunk.css.map",
+    "static/css/main.e6158a01.chunk.css.map": "/haleyMorrisProjectFive/static/css/main.e6158a01.chunk.css.map",
+    "static/js/2.c6dd2753.chunk.js.LICENSE.txt": "/haleyMorrisProjectFive/static/js/2.c6dd2753.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/haleyMorrisProjectFive/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.5c5f63aa.js",
-    "static/js/2.50921a4e.chunk.js",
-    "static/css/main.d1b05096.chunk.css",
-    "static/js/main.36c19ccd.chunk.js"
+    "static/css/2.6ec8dc65.chunk.css",
+    "static/js/2.c6dd2753.chunk.js",
+    "static/css/main.e6158a01.chunk.css",
+    "static/js/main.41272200.chunk.js"
   ]
 }
