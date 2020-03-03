@@ -23,7 +23,7 @@ class Header extends Component {
         {this.state.iconClicked 
           ? <Form /> 
           : 
-            <nav className="navMenu">
+            <nav className="navMenu wrapper">
               <p>TRVL JRNL</p>
               <ul>
                 <li>
