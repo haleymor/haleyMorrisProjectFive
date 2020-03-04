@@ -8,7 +8,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
-
+/* general styling */
 .App {
   text-align: center;
   font-family: 'Fira Sans Condensed', 'sans-serif';
@@ -24,6 +24,12 @@ button:hover {
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
+
+.landingPage button:focus, .formSection input:focus, .formSection .entryText textarea:focus, .myEntries button:focus {
+  border: 3px solid rgb(78, 160, 226);
+}
+
+/* landing page styling */
 
 .landingPage {
   background:#CCDBDC;
@@ -58,9 +64,6 @@ button:hover {
   border-color: #FDFFFC;
 }
 
-.landingPage button:focus {
-  border: 3px solid rgb(78, 160, 226);
-}
 
 .formSection form {
   display: flex;
@@ -72,10 +75,9 @@ button:hover {
 .formSection input {
   text-align: left;
   width: 70%;
-}
-
-.formSection input:focus {
-  border: 3px solid rgb(78, 160, 226);
+  padding: 10px;
+  margin: 0 10px;
+  border: none;
 }
 
 .formSection label {
@@ -93,11 +95,11 @@ button:hover {
   text-align: left;
 }
 
-.input input {
+/* .input input {
   padding: 10px;
   margin: 0 10px;
   border: none;
-}
+} */
 
 .formSection h1 {
   padding: 30px 0;
@@ -113,10 +115,7 @@ button:hover {
   width: 70%;
 }
 
-.formSection .entryText textarea:focus {
-  border: 3px solid rgb(78, 160, 226);
-}
-
+/* header styling */
 .appHeader {
   background: #36213E;
 }
@@ -151,6 +150,8 @@ button:hover {
   font-size: 1.5rem;
   margin: 30px 0px;
 }
+
+/* entries section styling */
 
 .myEntries {
   background: #FDFFFC;
@@ -193,14 +194,12 @@ button:hover {
   transition: none;
 }
 
-.myEntries button:focus {
-  border: 3px solid rgb(78, 160, 226);
-}
-
 .myEntries h4, .myEntries p {
   position: relative;
   z-index: -1;
 }
+
+/* single entry page styling */
 
 .singleEntry {
   background: #FDFFFC;
@@ -232,6 +231,8 @@ button:hover {
   font-size: 1.2rem;
 }
 
+/* footer styling */
+
 .appFooter {
   background: #030027;
   color: #FDFFFC;
@@ -242,6 +243,8 @@ button:hover {
   padding: 10px 0;
   text-align: center;
 }
+
+/* media queries */
 
 @media (max-width: 700px) {
   .formSection h1 {

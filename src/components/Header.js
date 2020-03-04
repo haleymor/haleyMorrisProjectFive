@@ -12,11 +12,6 @@ class Header extends Component {
     }
   }
 
-  handleIconClick = () => {
-    this.setState({
-      iconClicked: true,
-    })
-  }
   render() {
     return(
       <div className="appHeader">
@@ -31,7 +26,7 @@ class Header extends Component {
                   <FontAwesomeIcon icon={faHome} />
                 </li>
                 <li>
-                  <FontAwesomeIcon icon={faPlusSquare} onClick={this.handleIconClick} />
+                  <FontAwesomeIcon icon={faPlusSquare} />
                 </li>
               </ul>
             </nav>

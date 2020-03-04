@@ -45,28 +45,51 @@ class Form extends Component {
     })
   }
 
+  handleBlankInput = () => {
+    if (this.state.userInputDate === '') {
+      alert('Please fill in all sections!');
+    } else if (this.state.userInputTitle === '') {
+      alert('Please fill in all sections!');
+    } else if (this.state.userInputLocation === '') {
+      alert('Please fill in all sections!');
+    } else if (this.state.userInputText === '') {
+      alert('Please fill in all sections!');
+    } else {
+    }
+  }
+
   handleFormSubmit = (e) => {
     e.preventDefault();
-    const entries = firebase.database().ref('entries');
-    const entryObj = {
-      date: this.state.userInputDate,
-      title: this.state.userInputTitle,
-      location: this.state.userInputLocation,
-      text: this.state.userInputText,
-      photo: this.state.userInputPhoto,
+    if (this.state.userInputDate === '') {
+      this.handleBlankInput();
+    } else if (this.state.userInputTitle === '') {
+      this.handleBlankInput();
+    } else if (this.state.userInputLocation === '') {
+      this.handleBlankInput();
+    } else if (this.state.userInputText === '') {
+      this.handleBlankInput();
+    } else {
+      
+      const entries = firebase.database().ref('entries');
+      const entryObj = {
+        date: this.state.userInputDate,
+        title: this.state.userInputTitle,
+        location: this.state.userInputLocation,
+        text: this.state.userInputText,
+      }
+  
+      entries.push(entryObj);
+  
+      this.setState({
+        userInputDate: '',
+        userInputTitle: '',
+        userInputLocation: '',
+        userInputText: '',
+        userInputPhoto: '',
+      })
+  
+      this.props.showList();
     }
-
-    entries.push(entryObj);
-
-    this.setState({
-      userInputDate: '',
-      userInputTitle: '',
-      userInputLocation: '',
-      userInputText: '',
-      userInputPhoto: '',
-    })
-
-    this.props.showList();
   }
 
   render() {
