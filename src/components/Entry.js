@@ -49,7 +49,7 @@ class Entry extends Component {
 
   render() {
     return (
-      <section className="singleEntry">
+      <section className="singleEntry wrapper">
         {this.state.journalData.map((entry) => {
           return (
             <div className="entryContainer">

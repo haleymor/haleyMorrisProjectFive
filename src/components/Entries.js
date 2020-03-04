@@ -38,7 +38,7 @@ class Entries extends Component {
 
   render() {
     return(
-      <section className="myEntries">
+      <section className="myEntries wrapper">
         <h1>My Entries</h1>
           <ul>
             {this.state.journalData.map((entry) => {

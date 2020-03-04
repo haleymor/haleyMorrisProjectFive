@@ -90,7 +90,6 @@ button:hover {
   justify-content: space-between;
   padding: 15px;
   width: 90%;
-  margin: 0 auto;
   text-align: left;
 }
 
@@ -106,7 +105,7 @@ button:hover {
   color: #030027;
 }
 
-.formSection .entryText textarea {
+.formSection textarea {
   resize: none;
   margin: 0 10px;
   border: none;
@@ -170,6 +169,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 0;
 }
 
 .myEntries li {
@@ -205,7 +205,8 @@ button:hover {
 .singleEntry {
   background: #FDFFFC;
   border: 2px solid #030027;
-  margin: 30px 150px;
+  margin: 50px auto;
+  width: 70%;
 }
 
 .singleEntry h5 {
@@ -241,3 +242,95 @@ button:hover {
   padding: 10px 0;
   text-align: center;
 }
+
+@media (max-width: 700px) {
+  .formSection h1 {
+    font-size: 4rem;
+  }
+
+  .formSection .input {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .formSection label, .formSection input {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .formSection textarea {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .myEntries li {
+  width: calc(50% - 40px);
+}
+}
+
+@media (max-width: 600px) {
+  .landingPage h1 {
+    font-size: 5rem;
+  }
+
+  .myEntries h1 {
+    font-size: 3rem;
+  }
+
+  .singleEntry {
+    width: 80%;
+  }
+
+  .entryContainer p {
+    text-align: justify;
+  }
+}
+
+@media (max-width: 480px) {
+  .landingPage h1 {
+    font-size: 3rem;
+  }
+
+  .landingPage h2, .landingPage h3{
+    font-size: 1.1rem;
+  }
+
+  .landingPage button {
+    padding: 15px 35px;
+  }
+
+  .formSection form {
+    width: 100%;
+  }
+
+  .formSection .input, .formSection label {
+    text-align: center;
+  }
+
+  .myEntries ul {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .myEntries li {
+    width: 90%;
+  }
+
+  .entryContainer h5 {
+    font-size: 2.5rem;
+  }
+
+  .entryContainer h6 {
+    font-size: 1.2rem;
+  }
+
+  .entryContainer p {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+
+  .singleEntry {
+    width: 90%;
+  }
+}
+
