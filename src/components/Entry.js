@@ -57,7 +57,8 @@ class Entry extends Component {
               <h6>{entry.name.date}</h6>
               <h6>{entry.name.location}</h6>
               <p>{entry.name.text}</p>
-              <img src={entry.name.photo} alt="" />
+              {/* to add in later */}
+              {/* <img src={entry.name.photo} alt="" /> */}
             </div>
           );
         })}

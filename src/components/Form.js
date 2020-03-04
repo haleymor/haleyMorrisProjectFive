@@ -91,10 +91,11 @@ class Form extends Component {
             <textarea id="text" rows="20" cols="45" onChange={this.handleTextChange} value={this.state.userInputText}>
             </textarea>
           </div>
-          <div className="addPhoto input">
+          {/* wasn't able to get photos working but left it commented out because I want to continue to work on this functionality */}
+          {/* <div className="addPhoto input">
             <label htmlFor="photo">Add Photo:</label>
             <input type="file" id="photo" accept="image/png, image/jpeg" onChange={this.handlePhotoChange} value={this.state.userInputPhoto} />
-          </div>
+          </div> */}
           <div className="submitButton">
             <button type="submit">Publish Entry</button>
           </div>
